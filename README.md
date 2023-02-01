@@ -1,6 +1,6 @@
 # 4AHINF-ShellyPlugS-EPIK
 
-In diesem Projekt werden wir eine Shelly PlugS App programmieren mit der wir die Steckdosen verwalten und monitoren können.
+In diesem Projekt werden wir eine Shelly PlugS Webanwendung programmieren mit der wir die Steckdosen verwalten und monitoren können.
 
 Projekt Teilnehmer:
 1. Emberger Vitus
