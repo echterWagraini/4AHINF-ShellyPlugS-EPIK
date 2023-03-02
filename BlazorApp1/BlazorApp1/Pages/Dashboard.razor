@@ -1,0 +1,130 @@
+﻿@page "/Dashboard"
+@using System.Net;
+@using JsonSerializer=System.Text.Json.JsonSerializer;
+
+<PageTitle>Dashboard</PageTitle>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Shelly Plugs Dashboard</title>
+    <style>
+        /* Reset default browser styles */ * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        /* Page layout */ body {
+            /*
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.4;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            */
+        }
+        /* Dashboard container */ .dashboard {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            padding: 20px;
+            width: 100%;
+        }
+        /* Individual plug cards */ .plug-card {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+        }
+
+            .plug-card h2 {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .plug-card p {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .plug-card button {
+                background-color: #4CAF50;
+                border: none;
+                border-radius: 4px;
+                color: white;
+                cursor: pointer;
+                font-size: 16px;
+                margin-top: 10px;
+                padding: 10px;
+                transition: background-color 0.2s;
+            }
+
+                .plug-card button:hover {
+                    background-color: #3e8e41;
+                }
+    </style>
+</head>
+<body>
+    @((MarkupString)myMarkup)
+    <button @onclick="onTurnOffClick" runat="server" CausesValidation="False">TurnOn/Off</button>
+    <!--
+    <div class="dashboard">      
+        <div class="plug-card">        
+            <h2>Plug 1</h2>        
+            <p>Status: </p>        
+            <p>Power Consumption:</p>        
+            <button>Turn Off</button>      
+        </div>    
+    </div>
+    -->
+</body>
+</html>
+
+@code
+{
+    bool status = true;
+
+    int anzahlPlugs = 0;
+    static string plugCard = "<div class='dashboard'><div class='plug-card'><h2>Plug 1</h2><p>Status: </p><p>Power Consumption:</p><button>Turn Off</button></div></div>";
+    string myMarkup = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        for (int i = 0; i < anzahlPlugs; i++)
+        {
+            myMarkup += plugCard;
+        }
+    }
+
+    public void onTurnOffClick()
+    {
+        HttpClient client = new HttpClient();
+        string perm=client.GetStringAsync("http://10.10.2.134/relay/0").Result;
+
+        Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);
+
+
+        if (plug1.ison)
+        {
+            client.PostAsync("http://10.10.2.134/relay/0?turn=off",null);
+        }
+        else if(!plug1.ison)
+        {
+            client.PostAsync("http://10.10.2.134/relay/0?turn=on",null);
+        }
+
+    }
+}

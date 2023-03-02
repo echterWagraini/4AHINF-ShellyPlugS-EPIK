@@ -1,0 +1,81 @@
+﻿@page "/Login"
+@using MongoDB.Bson;
+@using MongoDB.Driver;
+@inject NavigationManager NavManager
+
+<PageTitle>Login</PageTitle>
+
+<html>
+<link href="/css/stylesheet.css" rel="stylesheet" />
+<body>
+    <h2>Login</h2>
+    <div class="container">
+        <label><b>Username oder Email</b></label>
+        <input type="text" @bind="@userNameInput" @oninput="OnUserNameEvent" placeholder="Enter Username" id="userName" name="userName" runat="server" required>
+
+        <label><b>Passwort</b></label>
+        <input type="password" @bind="@passwordInput" @oninput="OnPasswordEvent" placeholder="Enter Password" name="psw" required>
+        
+        <div class="container" style=@curCSS>
+            <span>
+                Your password is incorrect or this account doesn't exist. Please try again or 
+                <a href="resetPwd" style="color: darkred">reset your password</a>
+            </span>
+        </div>
+
+        <button type="submit" @onclick="onLoginClick" runat="server" CausesValidation="False">Sign in</button>
+
+        <input type="checkbox" checked="checked"> Remember me
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <span>Don't have an Account? <a href="Register">Sign up</a></span>
+        <span class="psw">Forgot <a href="ResetPwd">password?</a></span>
+    </div>
+</body>
+</html>
+
+@code
+{
+    string shownCSS = "background-color:#ffdce4; color: darkred;";
+    string curCSS = "background - color:#ffdce4; color: darkred; display: none";
+
+    public void onLoginClick()
+    {
+        bool validLogin = false;
+
+        var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+        var mongodb = client.GetDatabase("BenutzerDatabase");
+        var collection = mongodb.GetCollection<Benutzer>("Benutzer");
+
+        var filter = Builders<Benutzer>.Filter.Eq("Email", userNameInput);
+
+        var benutzer = collection.Find(filter).FirstOrDefault();
+
+        if (benutzer != null)
+        {
+            if (userNameInput == benutzer.Email)
+            {
+                if (passwordInput == benutzer.Passwort)
+                {
+                    validLogin = true;
+                    NavManager.NavigateTo("Dashboard");
+                }
+            }
+        }
+        if (!validLogin)
+        {
+            curCSS = shownCSS;
+        }
+    }
+
+    private string userNameInput = "";
+    private string passwordInput = "";
+    private void OnUserNameEvent(ChangeEventArgs changeEvent)
+    {
+        userNameInput = (string)changeEvent.Value;
+    }
+    private void OnPasswordEvent(ChangeEventArgs changeEvent)
+    {
+        passwordInput = (string)changeEvent.Value;
+    }
+}
