@@ -16,16 +16,16 @@
         }
         /* Page layout */ body {
             /*
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.4;
-            background-color: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            */
+                    font-family: Arial, sans-serif;
+                    font-size: 16px;
+                    line-height: 1.4;
+                    background-color: #f5f5f5;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    */
         }
         /* Dashboard container */ .dashboard {
             background-color: #fff;
@@ -44,9 +44,9 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            margin: 10px;
             padding: 20px;
             width: 300px;
+            margin: 10px;
         }
 
             .plug-card h2 {
@@ -75,37 +75,60 @@
                 .plug-card button:hover {
                     background-color: #3e8e41;
                 }
+
+        #addPlug {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px;
+            transition: background-color 0.2s;
+        }
+
+            #addPlug button:hover {
+                background-color: #3e8e41;
+            }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 320px 320px 320px;
+            align-content: center;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
-    @((MarkupString)myMarkup)
-    <button @onclick="onTurnOffClick" runat="server" CausesValidation="False">TurnOn/Off</button>
-    <!--
-    <div class="dashboard">      
-        <div class="plug-card">        
-            <h2>Plug 1</h2>        
-            <p>Status: </p>        
-            <p>Power Consumption:</p>        
-            <button>Turn Off</button>      
-        </div>    
+    <button id="addPlug" @onclick="addPlugS" runat="server">Add plug</button>
+
+    <div class="grid-container">
+        @for (int i = 0; i < anzahlPlugs; i++)
+        {
+            <div class='plug-card'>
+                <h2>Plug 1</h2>
+                <p>Status: </p>
+                <p>Power Consumption:</p>
+                <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
+            </div>
+        }
     </div>
-    -->
+
 </body>
 </html>
 
 @code
 {
+
     bool status = true;
-
     int anzahlPlugs = 0;
-    static string plugCard = "<div class='dashboard'><div class='plug-card'><h2>Plug 1</h2><p>Status: </p><p>Power Consumption:</p><button>Turn Off</button></div></div>";
-    string myMarkup = "";
 
-    protected override async Task OnInitializedAsync()
+    public void addPlugS()
     {
-        for (int i = 0; i < anzahlPlugs; i++)
+        if (anzahlPlugs < 9)
         {
-            myMarkup += plugCard;
+            anzahlPlugs++;
         }
     }
 
@@ -113,7 +136,6 @@
     {
         HttpClient client = new HttpClient();
         string perm=client.GetStringAsync("http://10.10.2.134/relay/0").Result;
-
         Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);
 
 
