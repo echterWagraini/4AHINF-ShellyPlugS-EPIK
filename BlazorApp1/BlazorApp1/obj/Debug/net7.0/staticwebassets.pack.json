@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\dashboardStylesheet.css",
+      "PackagePath": "staticwebassets\\css\\dashboardStylesheet.css"
+    },
+    {
       "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },

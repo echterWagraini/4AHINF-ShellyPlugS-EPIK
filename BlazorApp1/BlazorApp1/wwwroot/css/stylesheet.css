@@ -1,3 +1,8 @@
+body {
+    background-color: #212121;
+    color:white;
+}
+
 /*set border to the form*/
 form {
     border: 3px solid #f1f1f1;
@@ -10,18 +15,23 @@ input[type=password] {
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
+    border-color:#616161;
     box-sizing: border-box;
+    background-color: #121212;
+    color: white;
+    border-radius: 4px;   
 }
 /*set a style for the buttons*/
 button {
     /*background-color: #4CAF50;*/
-    background-color:darkblue;
+    background-color: darkblue;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 4px;
 }
     /* set a hover effect for the button*/
     button:hover {

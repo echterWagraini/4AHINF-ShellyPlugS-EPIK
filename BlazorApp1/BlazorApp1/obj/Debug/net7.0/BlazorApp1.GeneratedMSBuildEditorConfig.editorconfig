@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Windows/System32/BlazorApp1/BlazorApp1/Pages/AddPlug.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGx1Zy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Windows/System32/BlazorApp1/BlazorApp1/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Windows/System32/BlazorApp1/BlazorApp1/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Windows/System32/BlazorApp1/BlazorApp1/Pages/Login2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Windows/System32/BlazorApp1/BlazorApp1/Pages/Register.razor]

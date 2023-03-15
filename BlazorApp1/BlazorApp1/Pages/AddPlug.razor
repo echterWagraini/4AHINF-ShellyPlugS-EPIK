@@ -1,0 +1,45 @@
+﻿@page "/AddPlug"
+@using MongoDB.Bson;
+@using MongoDB.Driver;
+@using System.Text.Json;
+@inject NavigationManager NavManager
+
+<PageTitle>Add Plug</PageTitle>
+
+<html>
+<link href="/css/stylesheet.css" rel="stylesheet" />
+<body>
+    <h2>Add Plug</h2>
+    <div class="container">
+        <label><b>Add via IP-Adress</b></label>
+        <input type="text" @bind="@ipInput" @oninput="OnIPEvent" placeholder="Enter IP-Address" id="userName" name="userName" runat="server" required>
+         <button type="submit" @onclick="onAddPlugClick" runat="server" CausesValidation="False">Add</button>
+
+         @test
+    </div>
+</body>
+</html>
+
+@code
+{
+    string test;
+    private string ipInput = "";
+    private void OnIPEvent(ChangeEventArgs changeEvent)
+    {
+        ipInput = (string)changeEvent.Value;
+    }
+    public void onAddPlugClick()
+    {
+        try
+        {
+            HttpClient client = new HttpClient();
+            string perm=client.GetStringAsync("http://"+ipInput+"/settings/sta").Result;
+            test = perm;
+            Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);
+        }
+        catch (Exception ex)
+        {
+            
+        }
+    }
+}
