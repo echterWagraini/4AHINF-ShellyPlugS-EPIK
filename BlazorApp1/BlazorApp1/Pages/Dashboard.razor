@@ -1,136 +1,119 @@
 ﻿@page "/Dashboard"
 @using System.Net;
 @using JsonSerializer=System.Text.Json.JsonSerializer;
+@using Microsoft.AspNetCore.WebUtilities;
+@using MongoDB.Driver;
+@inject NavigationManager NavManager
+@inject IJSRuntime js
 
 <PageTitle>Dashboard</PageTitle>
 
 <html>
+<link href="/css/dashboardStylesheet.css" rel="stylesheet" />
 <head>
     <meta charset="utf-8">
     <title>Shelly Plugs Dashboard</title>
-    <style>
-        /* Reset default browser styles */ * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        /* Page layout */ body {
-            /*
-                    font-family: Arial, sans-serif;
-                    font-size: 16px;
-                    line-height: 1.4;
-                    background-color: #f5f5f5;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;
-                    */
-        }
-        /* Dashboard container */ .dashboard {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 1200px;
-            padding: 20px;
-            width: 100%;
-        }
-        /* Individual plug cards */ .plug-card {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            width: 300px;
-            margin: 10px;
-        }
-
-            .plug-card h2 {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 10px;
-            }
-
-            .plug-card p {
-                font-size: 16px;
-                margin-bottom: 10px;
-            }
-
-            .plug-card button {
-                background-color: #4CAF50;
-                border: none;
-                border-radius: 4px;
-                color: white;
-                cursor: pointer;
-                font-size: 16px;
-                margin-top: 10px;
-                padding: 10px;
-                transition: background-color 0.2s;
-            }
-
-                .plug-card button:hover {
-                    background-color: #3e8e41;
-                }
-
-        #addPlug {
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 4px;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-            padding: 10px;
-            transition: background-color 0.2s;
-        }
-
-            #addPlug button:hover {
-                background-color: #3e8e41;
-            }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: 320px 320px 320px;
-            align-content: center;
-            justify-content: center;
-        }
-
-    </style>
+    
 </head>
 <body>
-    <button id="addPlug" @onclick="addPlugS" runat="server">Add plug</button>
+    <AuthorizeView>
+        <Authorized>
+            <h1>Hello, @context.User.Identity.Name!</h1>
+        </Authorized>
+        <NotAuthorized>
+            <h1>Not logged in!</h1>
+        </NotAuthorized>
+    </AuthorizeView>
 
-    <div class="grid-container">
-        @for (int i = 0; i < anzahlPlugs; i++)
-        {
-            <div class='plug-card'>
-                <h2>Plug 1</h2>
-                <p>Status: </p>
-                <p>Power Consumption:</p>
-                <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
+    <AuthorizeView>
+        <Authorized>
+            <div class="grid-container">
+                <!--
+                @for (int i = 0; i < anzahlPlugs; i++)
+                {
+                    /*<div class='plug-card'>
+                        <h2>Plug 1</h2>
+                        <p>Status: </p>
+                        <p>Power Consumption:</p>
+                        <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
+                    </div>*/
+                }
+                -->
+                @if (currentUser.Plugs != null)
+                {
+                    @foreach (Plug p in currentUser.Plugs)
+                    {
+                        <div class='plug-card'>
+                            <h2>Plug 1</h2>
+                            <p>Status: @p.ison.ToString()</p>
+                            <p>Power Consumption:</p>
+                            <p>IP: @p.ip</p>
+                            <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
+                        </div>
+                    }
+                }
             </div>
-        }
-    </div>
-
+            <label>@test</label>
+        </Authorized>
+    </AuthorizeView>
 </body>
 </html>
 
 @code
 {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+    Benutzer currentUser = new Benutzer();
+    String test="";
+
+    //get the logged in User
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var authState = await authenticationState;
+            var name = authState.User.Identity.Name;
+
+            var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+            var mongodb = client.GetDatabase("BenutzerDatabase");
+            var collection = mongodb.GetCollection<Benutzer>("Benutzer");
+
+            var filter = Builders<Benutzer>.Filter.Eq("Email", name);
+
+            var benutzer = collection.Find(filter).FirstOrDefault();
+            if (benutzer != null)
+            {
+                currentUser = benutzer;
+
+                if (currentUser.Plugs == null)
+                {
+                    List<Plug> plugList = new List<Plug>();
+                    currentUser.Plugs = plugList;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            js.InvokeVoidAsync("alert", "Somethign went Wrong!" + ex.GetType().ToString()+ex.ToString());
+        }
+
+        /*//set timer
+        var timer = new PeriodicTimer(TimeSpan.FromSeconds(5));
+
+        while (await timer.WaitForNextTickAsync())
+        {
+            if (currentUser.Plugs != null)
+            {
+                for (int i = 0; i < currentUser.Plugs.Count; i++)
+                {
+                    currentUser.Plugs[i] = updatePlugData(currentUser.Plugs[i].ip);
+                }
+            }
+        }*/
+    }
+
 
     bool status = true;
-    int anzahlPlugs = 0;
-
-    public void addPlugS()
-    {
-        if (anzahlPlugs < 9)
-        {
-            anzahlPlugs++;
-        }
-    }
 
     public void onTurnOffClick()
     {
@@ -147,6 +130,45 @@
         {
             client.PostAsync("http://10.10.2.134/relay/0?turn=on",null);
         }
-
     }
+    public Plug updatePlugData(string ipInput)
+    {
+        try
+        {
+            HttpClient client = new HttpClient();
+            string perm = client.GetStringAsync("http://" + ipInput + "/relay/0").Result;
+            Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);
+
+            plug1.ip = ipInput;
+
+            return plug1;
+
+        }
+        catch (Exception ex)
+        {
+            js.InvokeVoidAsync("alert", "Something went Wrong!" + ex.ToString());
+            return null;
+        }
+    }
+   
+    //Beispiel für die Verwendung der Nutzerdaten:
+    /*[CascadingParameter]
+    private Task<AuthenticationState> authenticationState{ get; set; }
+
+    private async Task DisplayGreetingAlert()
+    {
+        var authState = await authenticationState;
+        var message = $"Hello {authState.User.Identity.Name}";
+
+        await js.InvokeVoidAsync("alert", message);
+    }*/
+
+    //Beispiel zur verwendung von Rollen in der Anzeige (in dem Fall in der Sidebar):
+    /*
+    <AuthorizeView Roles="Administrator"> //kann auch "Administrator,User" sein für mehrere Rollen
+        <Authorized>
+            //Was auch immer der Admin sehen soll (z.b. link zum Admin Terminal)
+        </Authorized
+    </AuthorizeView>
+     */
 }

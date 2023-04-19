@@ -1,0 +1,101 @@
+﻿@page "/AddPlug"
+@using MongoDB.Bson;
+@using MongoDB.Driver;
+@using System.Text.Json;
+@inject NavigationManager NavManager
+@inject IJSRuntime js
+
+<PageTitle>Add Plug</PageTitle>
+
+<html>
+<link href="/css/stylesheet.css" rel="stylesheet" />
+<body>
+    <h2>Add Plug</h2>
+    <div class="container">
+        <label><b>Add via IP-Adress</b></label>
+        <input type="text" @bind="@ipInput" @oninput="OnIPEvent" placeholder="Enter IP-Address" id="userName" name="userName" runat="server" required>
+         <button type="submit" @onclick="onAddPlugClick" runat="server" CausesValidation="False">Add</button>
+
+    </div>
+</body>
+</html>
+
+@code
+{
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+    Benutzer currentUser = new Benutzer();
+
+    //get the logged in User
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var authState = await authenticationState;
+            var name = authState.User.Identity.Name;
+
+            var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+            var mongodb = client.GetDatabase("BenutzerDatabase");
+            var collection = mongodb.GetCollection<Benutzer>("Benutzer");
+
+            var filter = Builders<Benutzer>.Filter.Eq("Email", name);
+
+            var benutzer = collection.Find(filter).FirstOrDefault();
+            if (benutzer != null)
+            {
+                currentUser = benutzer;
+
+                if (currentUser.Plugs == null)
+                {
+                    List<Plug> plugList = new List<Plug>();
+                    currentUser.Plugs = plugList;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            js.InvokeVoidAsync("alert", "Somethign went Wron!" + ex.GetType().ToString() + ex.ToString());
+        }
+    }
+
+    private string ipInput = "";
+    private void OnIPEvent(ChangeEventArgs changeEvent)
+    {
+        ipInput = (string)changeEvent.Value;
+    }
+    public void onAddPlugClick()
+    {
+        try
+        {
+            HttpClient client = new HttpClient();
+            string perm=client.GetStringAsync("http://"+ipInput+"/relay/0").Result;
+            Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);
+
+            /*Plug plug1 = new Plug();
+            plug1.ip = ipInput;*/
+            plug1.ip = ipInput;
+
+            currentUser.Plugs.Add(plug1);
+
+            UpdateUser();
+
+        }
+        catch (Exception ex)
+        {
+            js.InvokeVoidAsync("alert", "Something went Wrong!"+ex.ToString());
+        }
+    }
+    public void UpdateUser()
+    {
+        var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+        var mongodb = client.GetDatabase("BenutzerDatabase");
+        var collection = mongodb.GetCollection<Benutzer>("Benutzer");
+
+        var filter = Builders<Benutzer>.Filter.Eq("Email", currentUser.Email);
+        var updater = Builders<Benutzer>.Update.Set("Plugs", currentUser.Plugs);
+
+        var benutzer = collection.Find(filter).FirstOrDefault();
+
+        collection.FindOneAndUpdate(filter, updater);
+    }
+}

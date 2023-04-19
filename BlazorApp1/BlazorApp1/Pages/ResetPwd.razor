@@ -20,7 +20,7 @@
 
         <button type="submit" @onclick="onRegisterClick" runat="server" CausesValidation="False">Passwort ändern</button>
     </div>
-    <div class="container" style="background-color:#f1f1f1">
+    <div class="container" style="background-color: #121212;color:white;border-radius: 10px;">
         <span class="login">Back to login <a href="Login">Sign in</a></span>
     </div>
 </body>
@@ -30,7 +30,7 @@
 {
     public void onRegisterClick()
     {
-            var client = new MongoClient("mongodb + srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+        var client = new MongoClient("mongodb + srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
         var mongodb = client.GetDatabase("BenutzerDatabase");
         var collection = mongodb.GetCollection<Benutzer>("Benutzer");
 

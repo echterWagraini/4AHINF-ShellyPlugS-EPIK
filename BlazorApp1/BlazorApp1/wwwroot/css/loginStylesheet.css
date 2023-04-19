@@ -1,6 +1,6 @@
 body {
     background-color: #212121;
-    color:white;
+    color: white;
 }
 
 /*set border to the form*/
@@ -11,27 +11,26 @@ form {
 input[type=text],
 input[type=password] {
     width: 100%;
-    padding: 12px 20px;
+    padding: 8px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-color:#616161;
+    border-color: #616161;
     box-sizing: border-box;
     background-color: #121212;
     color: white;
-    border-radius: 4px;   
+    border-radius: 4px;
 }
 /*set a style for the buttons*/
 button {
     /*background-color: #4CAF50;*/
-    background-color: darkblue;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 10px;
+    /*margin: 8px 0;*/
     border: none;
     cursor: pointer;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 5px;
 }
     /* set a hover effect for the button*/
     button:hover {
@@ -55,13 +54,57 @@ img.avatar {
 }
 /*set padding to the container*/
 .container {
-    padding: 16px;
+    padding: 7px;
 }
 /*set the forgot password text*/
 span.psw {
     float: right;
     padding-top: 0px;
 }
+
+
+
+.loginborder {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+}
+
+.login {
+    padding: 20px;
+    border-radius: 25px;
+    background-color: #121212;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 15px;
+}
+
+.header {
+    text-align: center;
+}
+
+.log{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.buttonLogin {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background-color: #212121;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.container2 {
+    padding: 7px;
+    background-color: #1A1A1A;
+    color: white;
+    border-radius: 5px;
+}
+
+
+
 /*set styles for span and cancel button on small screens*/
 @media screen and (max-width: 300px) {
     span.psw {

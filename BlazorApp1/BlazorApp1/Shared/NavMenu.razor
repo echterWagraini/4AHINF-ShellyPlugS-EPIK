@@ -6,7 +6,12 @@
     </div>    
 </div>    
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">        
-    <nav class="flex-column">            
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="AddPlug">
+                <span class="oi oi-plus" aria-hidden="true"></span>Add Plug
+            </NavLink>
+        </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="Dashboard">
                 <span class="oi oi-plus" aria-hidden="true"></span>Dashboard

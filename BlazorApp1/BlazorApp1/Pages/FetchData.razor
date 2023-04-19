@@ -1,6 +1,9 @@
 ﻿@page "/fetchdata"
 @using BlazorApp1.Data
 @inject WeatherForecastService ForecastService
+@attribute [Authorize(Roles ="Administrator")] 
+<!--allows only admins to see this page-->
+
 
 <PageTitle>Weather forecast</PageTitle>
 

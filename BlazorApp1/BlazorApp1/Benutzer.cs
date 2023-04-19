@@ -12,5 +12,8 @@ namespace BlazorApp1
         public string Email { get; set; }
         public string Passwort { get; set; }
         public int MaxStromVerbrauch { get; set; }
+        public string Role { get; set; }
+
+        public List<Plug> Plugs { get; set; }
     }
 }

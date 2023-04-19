@@ -1,7 +1,11 @@
-﻿@page "/Login"
+﻿@page "/Login2"
+@using BlazorApp1.Authentication;
 @using MongoDB.Bson;
 @using MongoDB.Driver;
 @inject NavigationManager NavManager
+@inject IJSRuntime js
+@inject AuthenticationStateProvider authStateProvider
+@inject NavigationManager navManager
 
 <PageTitle>Login</PageTitle>
 
@@ -11,10 +15,10 @@
     <h2>Login</h2>
     <div class="container">
         <label><b>Username oder Email</b></label>
-        <input type="text" @bind="@userNameInput" @oninput="OnUserNameEvent" placeholder="Enter Username" id="userName" name="userName" runat="server" required>
+        <input type="text" @bind="model.userNameInput" placeholder="Enter Username" id="userName" name="userName" runat="server" required>
 
         <label><b>Passwort</b></label>
-        <input type="password" @bind="@passwordInput" @oninput="OnPasswordEvent" placeholder="Enter Password" name="psw" required>
+        <input type="password" @bind="model.passwordInput" placeholder="Enter Password" name="psw" required>
         
         <div class="container" style=@curCSS>
             <span>
@@ -27,7 +31,7 @@
 
         <input type="checkbox" checked="checked"> Remember me
     </div>
-    <div class="container" style="background-color:#f1f1f1">
+    <div class="container" style="background-color: #121212;color:white;border-radius: 10px;">
         <span>Don't have an Account? <a href="Register">Sign up</a></span>
         <span class="psw">Forgot <a href="ResetPwd">password?</a></span>
     </div>
@@ -36,46 +40,40 @@
 
 @code
 {
+    private class Model
+    {
+        public string userNameInput { get; set; }
+        public string passwordInput { get; set; }
+    }
+
+    private Model model = new Model();
+
     string shownCSS = "background-color:#ffdce4; color: darkred;";
     string curCSS = "background - color:#ffdce4; color: darkred; display: none";
 
-    public void onLoginClick()
+    private async Task onLoginClick()
     {
-        bool validLogin = false;
-
         var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
         var mongodb = client.GetDatabase("BenutzerDatabase");
         var collection = mongodb.GetCollection<Benutzer>("Benutzer");
 
-        var filter = Builders<Benutzer>.Filter.Eq("Email", userNameInput);
+        var filter = Builders<Benutzer>.Filter.Eq("Email", model.userNameInput);
 
         var benutzer = collection.Find(filter).FirstOrDefault();
 
-        if (benutzer != null)
-        {
-            if (userNameInput == benutzer.Email)
-            {
-                if (passwordInput == benutzer.Passwort)
-                {
-                    validLogin = true;
-                    NavManager.NavigateTo("Dashboard");
-                }
-            }
-        }
-        if (!validLogin)
+        if (benutzer == null || benutzer.Passwort != model.passwordInput)
         {
             curCSS = shownCSS;
+            return;
         }
-    }
 
-    private string userNameInput = "";
-    private string passwordInput = "";
-    private void OnUserNameEvent(ChangeEventArgs changeEvent)
-    {
-        userNameInput = (string)changeEvent.Value;
-    }
-    private void OnPasswordEvent(ChangeEventArgs changeEvent)
-    {
-        passwordInput = (string)changeEvent.Value;
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationState(new UserSession
+            {
+                UserName = benutzer.Email,
+                Role = benutzer.Role
+            });
+
+        navManager.NavigateTo("Dashboard", true);
     }
 }

@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\dashboardStylesheet.css",
+      "PackagePath": "staticwebassets\\css\\dashboardStylesheet.css"
+    },
+    {
+      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\loginStylesheet.css",
+      "PackagePath": "staticwebassets\\css\\loginStylesheet.css"
+    },
+    {
       "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
@@ -47,6 +55,10 @@
     {
       "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\registerStylesheet.css",
+      "PackagePath": "staticwebassets\\css\\registerStylesheet.css"
     },
     {
       "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\site.css",

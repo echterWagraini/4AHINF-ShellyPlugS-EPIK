@@ -9,5 +9,7 @@
         public float timer_remaining { get; set; }
         public bool overpower { get; set; }
         public string source { get; set; }
+
+        public String ip { get; set; }
     }
 }

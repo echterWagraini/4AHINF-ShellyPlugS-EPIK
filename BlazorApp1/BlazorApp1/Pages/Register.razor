@@ -1,64 +1,80 @@
 ﻿@page "/Register"
+@using MongoDB.Bson;
 @using MongoDB.Driver;
 @inject NavigationManager NavManager
+@inject IJSRuntime js
 
 <PageTitle>Register</PageTitle>
 
+<PageTitle>Register</PageTitle>
+<link href="/css/registerStylesheet.css" rel="stylesheet" />
 <html>
-<link href="/css/stylesheet.css" rel="stylesheet" />
-<body>
-    <h2>Register</h2>
-    <div class="container">
-        <label><b>Username oder Email</b></label>
-        <input type="text" @bind="@userNameInput" @oninput="OnUserNameEvent" placeholder="Enter Username" id="userName" name="userName" runat="server" required>
-
-        <label><b>Passwort</b></label>
-        <input type="password" @bind="@passwordInput" @oninput="OnPasswordEvent" placeholder="Enter Password" name="psw" required>
-
-        <label><b>Passwort wiederholen</b></label>
-        <input type="password" @bind="@passwordInput2" @oninput="OnPassword2Event" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit" @onclick="onRegisterClick" runat="server" CausesValidation="False">Sign up</button>
-    </div>
-    <div class="container" style="background-color:#f1f1f1">
-        <span class="login">Already have an Account? <a href="Login">Sign in</a></span>
-    </div>
-</body>
+    <body>
+        <div class="registerborder">            
+            <div class="register">                
+                <div class="header">                    
+                    <h3>Register</h3>                
+                </div>                
+                <div class="reg">                    
+                    <label>Email</label>                    
+                    <input @bind="model.userNameInput" type="text" placeholder="Email" />                
+                </div>                
+                <div class="reg">                    
+                    <label>Passwort</label>                    
+                    <input @bind="model.passwordInput" type="password" placeholder="Passwort" />                
+                </div>                
+                <div class="reg">                    
+                    <label>Passwort wiederholen</label>                    
+                    <input @bind="model.passwordInput2" type="password" placeholder="Passwort" />                
+                </div>                
+                <button type="submit" @onclick="onRegisterClick" class="buttonRegister" runat="server" CausesValidation="False">Sign up</button>                
+                <div class="container2">                    
+                    <span>Already have an Account? <a href="Login">Sign in</a></span>                
+                </div>            
+            </div>        
+        </div>
+    </body>
 </html>
 
 @code
 {
+    private class Model
+    {
+        public string userNameInput { get; set; }
+        public string passwordInput { get; set; }
+        public string passwordInput2{ get; set; }
+    }
+
+    private Model model = new Model();
+
     public void onRegisterClick()
     {
-        var client = new MongoClient("mongodb+srv://Flo:shelly@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
-        var mongodb = client.GetDatabase("BenutzerDatabase");
-        var collection = mongodb.GetCollection<Benutzer>("Benutzer");
+        try{
+            var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+            var mongodb = client.GetDatabase("BenutzerDatabase");
+            var collection = mongodb.GetCollection<Benutzer>("Benutzer");
 
-        if (passwordInput == passwordInput2)
-        {
-            Benutzer newBenutzer = new Benutzer()
-                {
-                    Email = userNameInput,
-                    Passwort = passwordInput
-                };
-            collection.InsertOne(newBenutzer);
+            if (model.passwordInput == model.passwordInput2)
+            {
+                Benutzer newBenutzer = new Benutzer()
+                    {
+                        Email = model.userNameInput,
+                        Passwort = model.passwordInput,
+                        Role = "user",
+                        Plugs = new List<Plug>()
+            };
+
+                collection.InsertOne(newBenutzer);
+            }
+            NavManager.NavigateTo("Login");
         }
-        NavManager.NavigateTo("Dashboard");
-    }
-
-    private string userNameInput = "";
-    private string passwordInput = "";
-    private string passwordInput2 = "";
-    private void OnUserNameEvent(ChangeEventArgs changeEvent)
-    {
-        userNameInput = (string)changeEvent.Value;
-    }
-    private void OnPasswordEvent(ChangeEventArgs changeEvent)
-    {
-        passwordInput = (string)changeEvent.Value;
-    }
-    private void OnPassword2Event(ChangeEventArgs changeEvent)
-    {
-        passwordInput2 = (string)changeEvent.Value;
+        catch (MongoWriteException e)
+        {
+            js.InvokeVoidAsync("alert","An Error occured: "+e.Message);
+        }
+        catch (Exception ex)
+        {
+            js.InvokeVoidAsync("alert", "An error occured while trying to create your Account! Please try again later!"+ex.GetType().ToString()+" "+ex.Message);
+        }
     }
 }
