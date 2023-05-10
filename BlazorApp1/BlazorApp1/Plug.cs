@@ -2,6 +2,7 @@
 {
     public class Plug
     { 
+        public string name { get; set; }
         public bool ison { get; set; }
         public bool has_timer { get; set; }
         public float timer_started { get; set; }

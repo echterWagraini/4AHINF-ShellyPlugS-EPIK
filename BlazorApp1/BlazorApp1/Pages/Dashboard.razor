@@ -16,6 +16,7 @@
     
 </head>
 <body>
+
     <AuthorizeView>
         <Authorized>
             <h1>Hello, @context.User.Identity.Name!</h1>
@@ -24,27 +25,16 @@
             <h1>Not logged in!</h1>
         </NotAuthorized>
     </AuthorizeView>
-
+    <!-- in dem AuthorizeView kann man keine onclick funktion mit einer lambda methode ersetzen
     <AuthorizeView>
         <Authorized>
-            <div class="grid-container">
-                <!--
-                @for (int i = 0; i < anzahlPlugs; i++)
-                {
-                    /*<div class='plug-card'>
-                        <h2>Plug 1</h2>
-                        <p>Status: </p>
-                        <p>Power Consumption:</p>
-                        <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
-                    </div>*/
-                }
-                -->
+            <div class="grid-container" style="@curCSScards">
                 @if (currentUser.Plugs != null)
                 {
                     @foreach (Plug p in currentUser.Plugs)
                     {
-                        <div class='plug-card'>
-                            <h2>Plug 1</h2>
+                        <div class='plug-card' @onclick="onCardClick">
+                            <h2>@p.name</h2>
                             <p>Status: @p.ison.ToString()</p>
                             <p>Power Consumption:</p>
                             <p>IP: @p.ip</p>
@@ -53,9 +43,71 @@
                     }
                 }
             </div>
+            <div style="@curCSS">
+                <div @onclick="onCardClick">
+                    <p>Back </p>
+                </div>
+                @if (currentPlug != null)
+                {
+                    @foreach (Plug p in currentUser.Plugs)
+                    {
+                        if (p.name == currentPlug.name)
+                        {
+                            <div class='single-plug'>
+                                <h2>@p.name </h2>
+                                <p>Status:</p>
+                                <p>Power Consumption:</p>
+                                <p>IP:</p>
+                                <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
+                            </div>
+                        }
+                    }
+                }    
+            </div>
             <label>@test</label>
         </Authorized>
     </AuthorizeView>
+    -->
+    @if (currentUser != null)
+    {
+        <div class="grid-container" style="@curCSScards">
+            @if (currentUser.Plugs != null)
+            {
+                @foreach (Plug p in currentUser.Plugs)
+                {
+                    <div class='plug-card' @onclick="@(() => onCardClick(p))">
+                        <h2>@p.name</h2>
+                        <p>Status: @p.ison.ToString()</p>
+                        <p>Power Consumption:</p>
+                        <p>IP: @p.ip</p>
+                        <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
+                    </div>
+                }
+            }
+        </div>
+        <div style="@curCSS">
+            <div @onclick="@(() => onCardClick(null))">
+                <p>Back </p>
+            </div>
+            @if (currentPlug != null)
+            {
+                @foreach (Plug p in currentUser.Plugs)
+                {
+                    if (p.name == currentPlug.name)
+                    {
+                        <div class='single-plug'>
+                            <h2>@p.name </h2>
+                            <p>Status:</p>
+                            <p>Power Consumption:</p>
+                            <p>IP:</p>
+                            <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        <label>@test</label>
+    }
 </body>
 </html>
 
@@ -66,9 +118,17 @@
     Benutzer currentUser = new Benutzer();
     String test="";
 
+    bool showCards = true;
+    string hidingCSS = "display:none";
+    string curCSS ="";
+    string curCSScards = "";
+
+    Plug currentPlug = null;
+
     //get the logged in User
     protected override async Task OnInitializedAsync()
     {
+        curCSS = hidingCSS;
         try
         {
             var authState = await authenticationState;
@@ -101,14 +161,14 @@
         var timer = new PeriodicTimer(TimeSpan.FromSeconds(5));
 
         while (await timer.WaitForNextTickAsync())
-        {
-            if (currentUser.Plugs != null)
-            {
-                for (int i = 0; i < currentUser.Plugs.Count; i++)
                 {
+                if (currentUser.Plugs != null)
+                {
+                for (int i = 0; i < currentUser.Plugs.Count; i++)
+                    {
                     currentUser.Plugs[i] = updatePlugData(currentUser.Plugs[i].ip);
-                }
-            }
+        }
+        }
         }*/
     }
 
@@ -150,7 +210,30 @@
             return null;
         }
     }
-   
+    public void onCardClick(Plug selectedPlug)
+    {
+        if (showCards)
+        {
+            curCSScards = hidingCSS;
+            curCSS = "";
+            showCards = false;
+            foreach(Plug p in currentUser.Plugs)
+            {
+                if (p == selectedPlug)
+                {
+                    currentPlug = selectedPlug;
+                }
+            }
+        }
+        else
+        {
+            curCSS = hidingCSS;
+            curCSScards = "";
+            showCards = true;
+            currentPlug = null;
+        }
+    }
+
     //Beispiel für die Verwendung der Nutzerdaten:
     /*[CascadingParameter]
     private Task<AuthenticationState> authenticationState{ get; set; }

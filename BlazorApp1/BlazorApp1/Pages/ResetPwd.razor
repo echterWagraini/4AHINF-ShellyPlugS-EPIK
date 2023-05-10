@@ -1,66 +1,86 @@
-﻿@page "/ResetPwd"
-@using MongoDB.Driver;
-@inject NavigationManager NavManager
-
-<PageTitle>Passwort Wiederherstellung</PageTitle>
-
-<html>
-<link href="/css/stylesheet.css" rel="stylesheet" />
-<body>
-    <h2>Passwort Wiederherstellung</h2>
-    <div class="container">
-        <label><b>Username oder Email</b></label>
-        <input type="text" @bind="@userNameInput" @oninput="OnUserNameEvent" placeholder="Enter Username" id="userName" name="userName" runat="server" required>
-
-        <label><b>Neues Passwort</b></label>
-        <input type="password" @bind="@passwordInput" @oninput="OnPasswordEvent" placeholder="Enter Password" name="psw" required>
-
-        <label><b>Neues Passwort wiederholen</b></label>
-        <input type="password" @bind="@passwordInput2" @oninput="OnPassword2Event" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit" @onclick="onRegisterClick" runat="server" CausesValidation="False">Passwort ändern</button>
-    </div>
-    <div class="container" style="background-color: #121212;color:white;border-radius: 10px;">
-        <span class="login">Back to login <a href="Login">Sign in</a></span>
-    </div>
-</body>
-</html>
-
-@code
+﻿@page "/ResetPwd" 
+@using MongoDB.Driver; 
+@inject NavigationManager NavManager 
+<PageTitle>Reset Password</PageTitle>
+<link href="/css/registerStylesheet.css" rel="stylesheet" />
+<html> 
+    <body> 
+        <div class="registerborder"> 
+            <div class="register"> 
+                <div class="header"> 
+                    <h3>Password recovery</h3> 
+                    </div> <div class="reg"> 
+                        <label>Email</label> 
+                        <input @bind="model.UserName" type="text" placeholder="Email"/> </div> 
+                        <div class="reg"> 
+                            <label>New password</label> <input @bind="model.Password" type="password" placeholder="Password" /> 
+                        </div> 
+                        <div class="reg"> 
+                            <label>Confirm password</label> 
+                            <input @bind="model.Password2" type="password" placeholder="Password" /> 
+                        </div> 
+                        <button type="submit" @onclick="onRegisterClick" class="buttonRegister" runat="server" CausesValidation="False">Reset password</button> 
+                        <div class="container2"> 
+                            <span class="login">Back to login <a href="Login">Sign in</a></span> 
+                        </div> 
+                        <div class="container" style=@curCSS> 
+                            <span>Passwords don`t match</span> 
+                        </div> 
+                    </div>
+                </div>
+            </body>
+    </html>
+ @code 
 {
-    public void onRegisterClick()
-    {
-        var client = new MongoClient("mongodb + srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
-        var mongodb = client.GetDatabase("BenutzerDatabase");
-        var collection = mongodb.GetCollection<Benutzer>("Benutzer");
-
-        var filter = Builders<Benutzer>.Filter.Eq("Email", userNameInput);
-        var updater = Builders<Benutzer>.Update.Set("Passwort", passwordInput);
-
-        var benutzer = collection.Find(filter).FirstOrDefault();
-
-        collection.FindOneAndUpdate(filter,updater);
-
-        if (passwordInput == passwordInput2)
-        {
-            collection.FindOneAndUpdate(filter,updater);
-        }
-        NavManager.NavigateTo("Login");
+    private class Model 
+    { 
+        public string UserName { get; set; } 
+        public string Password { get; set; } 
+        public string Password2 { get; set; } 
     }
+        private Model model = new Model(); 
+        string shownCSS = "margin-top: 15px; border-radius: 5px; background-color:#ffdce4; color: darkred;"; 
+        string curCSS = "margin-top: 15px; border-radius: 5px; background-color:#ffdce4; color: darkred; display:none";
 
-    private string userNameInput = "";
-    private string passwordInput = "";
-    private string passwordInput2 = "";
-    private void OnUserNameEvent(ChangeEventArgs changeEvent)
-    {
-        userNameInput = (string)changeEvent.Value;
-    }
-    private void OnPasswordEvent(ChangeEventArgs changeEvent)
-    {
-        passwordInput = (string)changeEvent.Value;
-    }
-    private void OnPassword2Event(ChangeEventArgs changeEvent)
-    {
-        passwordInput2 = (string)changeEvent.Value;
-    }
+        public void onRegisterClick() 
+        { 
+            if(model.Password == model.Password2 && model.Password != null && model.Password2 != null) 
+            { 
+                var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+                var mongodb = client.GetDatabase("BenutzerDatabase"); 
+                var collection = mongodb.GetCollection<Benutzer>("Benutzer"); 
+
+                var filter = Builders<Benutzer>.Filter.Eq("Email", model.UserName); 
+                var updater = Builders<Benutzer>.Update.Set("Passwort", model.Password); 
+
+                //var benutzer = collection.Find(filter).FirstOrDefault(); 
+                collection.FindOneAndUpdate(filter, updater); 
+                
+                /*if (passwordInput == passwordInput2) 
+                {
+                    collection.FindOneAndUpdate(filter, updater); 
+                }*/
+                NavManager.NavigateTo("Login"); 
+            } 
+            else
+            { 
+                curCSS = shownCSS; 
+            } 
+        } 
+        /*
+        private string userNameInput = ""; 
+        private string passwordInput = ""; 
+        private string passwordInput2 = ""; 
+        private void OnUserNameEvent(ChangeEventArgs changeEvent) 
+        { 
+            userNameInput = (string)changeEvent.Value; 
+        } 
+        private void OnPasswordEvent(ChangeEventArgs changeEvent) 
+        { 
+            passwordInput = (string)changeEvent.Value; 
+        } 
+        private void OnPassword2Event(ChangeEventArgs changeEvent) 
+        { 
+            passwordInput2 = (string)changeEvent.Value; 
+        }*/ 
 }

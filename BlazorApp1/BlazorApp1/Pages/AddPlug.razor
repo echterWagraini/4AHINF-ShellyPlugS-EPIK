@@ -14,7 +14,8 @@
     <div class="container">
         <label><b>Add via IP-Adress</b></label>
         <input type="text" @bind="@ipInput" @oninput="OnIPEvent" placeholder="Enter IP-Address" id="userName" name="userName" runat="server" required>
-         <button type="submit" @onclick="onAddPlugClick" runat="server" CausesValidation="False">Add</button>
+        <input type="text" @bind="@name" @oninput="OnNameEvent" placeholder="Name of Plug" id="name" name="userName" runat="server" required>
+        <button type="submit" @onclick="onAddPlugClick" runat="server" CausesValidation="False">Add</button>
 
     </div>
 </body>
@@ -59,21 +60,26 @@
     }
 
     private string ipInput = "";
+    private string name = "";
     private void OnIPEvent(ChangeEventArgs changeEvent)
     {
         ipInput = (string)changeEvent.Value;
+    }
+    private void OnNameEvent(ChangeEventArgs changeEvent)
+    {
+        name = (string)changeEvent.Value;
     }
     public void onAddPlugClick()
     {
         try
         {
-            HttpClient client = new HttpClient();
+            /*HttpClient client = new HttpClient();
             string perm=client.GetStringAsync("http://"+ipInput+"/relay/0").Result;
-            Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);
+            Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);*/
 
-            /*Plug plug1 = new Plug();
-            plug1.ip = ipInput;*/
+            Plug plug1 = new Plug();
             plug1.ip = ipInput;
+            plug1.name = name;
 
             currentUser.Plugs.Add(plug1);
 
