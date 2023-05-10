@@ -15,5 +15,6 @@ namespace BlazorApp1
         public string Role { get; set; }
 
         public List<Plug> Plugs { get; set; }
+        public List<Notification> Notifications { get; set; }
     }
 }

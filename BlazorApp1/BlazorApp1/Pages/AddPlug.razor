@@ -82,6 +82,9 @@
             plug1.name = name;
 
             currentUser.Plugs.Add(plug1);
+            /*Notification n = new Notification();
+            n.message = name;
+            currentUser.Notifications.Add(n);*/
 
             UpdateUser();
 
@@ -99,6 +102,7 @@
 
         var filter = Builders<Benutzer>.Filter.Eq("Email", currentUser.Email);
         var updater = Builders<Benutzer>.Update.Set("Plugs", currentUser.Plugs);
+        //var updater = Builders<Benutzer>.Update.Set("Notifications", currentUser.Notifications);
 
         var benutzer = collection.Find(filter).FirstOrDefault();
 

@@ -44,3 +44,5 @@ C:\Windows\System32\BlazorApp1\BlazorApp1\bin\Debug\net7.0\runtimes\linux\native
 C:\Windows\System32\BlazorApp1\BlazorApp1\bin\Debug\net7.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Windows\System32\BlazorApp1\BlazorApp1\bin\Debug\net7.0\runtimes\win\native\mongocrypt.dll
 C:\Windows\System32\BlazorApp1\BlazorApp1\obj\Debug\net7.0\BlazorApp1.csproj.CopyComplete
+C:\Windows\System32\BlazorApp1\BlazorApp1\bin\Debug\net7.0\HiveMQtt.dll
+C:\Windows\System32\BlazorApp1\BlazorApp1\bin\Debug\net7.0\NLog.dll

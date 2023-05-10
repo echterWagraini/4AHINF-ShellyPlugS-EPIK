@@ -61,7 +61,8 @@
                         Email = model.userNameInput,
                         Passwort = model.passwordInput,
                         Role = "user",
-                        Plugs = new List<Plug>()
+                        Plugs = new List<Plug>(),
+                        Notifications =new List<Notification>()
             };
 
                 collection.InsertOne(newBenutzer);

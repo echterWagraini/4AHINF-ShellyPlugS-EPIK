@@ -1,10 +1,12 @@
 ﻿@page "/Dashboard"
 @using System.Net;
+@using HiveMQtt.Client.Options;
 @using JsonSerializer=System.Text.Json.JsonSerializer;
 @using Microsoft.AspNetCore.WebUtilities;
 @using MongoDB.Driver;
 @inject NavigationManager NavManager
 @inject IJSRuntime js
+@using HiveMQtt.Client;
 
 <PageTitle>Dashboard</PageTitle>
 
@@ -234,6 +236,31 @@
         }
     }
 
+    public async void connectMQTT()
+    {
+        //Options
+        var options = new HiveMQClientOptions();
+        options.Host = "candy.x39.eu.hivemq.cloud";
+        options.Port = 8883;
+
+        // Connect
+        var client = new HiveMQClient(options);
+        var connectResult = await client.ConnectAsync().ConfigureAwait(false);
+
+        // Message Handler
+        client.OnMessageReceived += (sender, args) =>
+        {
+            Console.WriteLine("Message Received: {}", args.PublishMessage.PayloadAsString);
+        };
+
+        // Subscribe
+        await client.SubscribeAsync("instrument/x9284/boston").ConfigureAwait(false);
+
+        await client.PublishAsync(
+                        "core/dynamic_graph/entity/227489", // Topic to publish to
+                        "{'2023': '👍'}"                    // Message to publish
+                        ).ConfigureAwait(false);
+    }
     //Beispiel für die Verwendung der Nutzerdaten:
     /*[CascadingParameter]
     private Task<AuthenticationState> authenticationState{ get; set; }

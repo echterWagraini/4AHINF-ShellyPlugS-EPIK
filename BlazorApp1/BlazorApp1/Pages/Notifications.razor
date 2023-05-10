@@ -1,0 +1,95 @@
+﻿@page "/Notifications"
+@using System.Net;
+@using HiveMQtt.Client.Options;
+@using JsonSerializer=System.Text.Json.JsonSerializer;
+@using Microsoft.AspNetCore.WebUtilities;
+@using MongoDB.Driver;
+@inject NavigationManager NavManager
+@inject IJSRuntime js
+@using HiveMQtt.Client;
+
+
+<PageTitle>Notifications</PageTitle>
+
+<html>
+<link href="/css/stylesheet.css" rel="stylesheet" />
+<body>
+    <AuthorizeView>
+        <NotAuthorized>
+            <h1>Not logged in!</h1>
+        </NotAuthorized>
+        <Authorized>
+            <h1>Notifications</h1>
+        </Authorized>
+    </AuthorizeView>
+
+    @if (currentUser != null) //Lambda not allowed in AuthorizeView
+    {
+        @foreach (Notification n in currentUser.Notifications)
+        {
+            <div class='single-plug' >
+                <h2>@n.message </h2>
+                <button @onclick="@(() => onDeleteClick(n))" runat='server'>Delete</button>
+            </div>
+        }
+    }
+
+</body>
+</html>
+
+@code 
+{
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+    Benutzer currentUser = new Benutzer();
+
+    //get the logged in User
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var authState = await authenticationState;
+            var name = authState.User.Identity.Name;
+
+            var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+            var mongodb = client.GetDatabase("BenutzerDatabase");
+            var collection = mongodb.GetCollection<Benutzer>("Benutzer");
+
+            var filter = Builders<Benutzer>.Filter.Eq("Email", name);
+
+            var benutzer = collection.Find(filter).FirstOrDefault();
+            if (benutzer != null)
+            {
+                currentUser = benutzer;
+
+                if (currentUser.Notifications == null)
+                {
+                    List<Notification> notifications = new List<Notification>();
+                    currentUser.Notifications = notifications;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            js.InvokeVoidAsync("alert", "Somethign went Wrong!" + ex.GetType().ToString() + ex.ToString());
+        }
+    }
+    public void onDeleteClick(Notification n)
+    {
+        currentUser.Notifications.Remove(n);
+        UpdateUser();
+    }
+    public void UpdateUser()
+    {
+        var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+        var mongodb = client.GetDatabase("BenutzerDatabase");
+        var collection = mongodb.GetCollection<Benutzer>("Benutzer");
+
+        var filter = Builders<Benutzer>.Filter.Eq("Email", currentUser.Email);
+        var updater = Builders<Benutzer>.Update.Set("Notifications", currentUser.Notifications);
+
+        var benutzer = collection.Find(filter).FirstOrDefault();
+
+        collection.FindOneAndUpdate(filter, updater);
+    }
+}

@@ -9,31 +9,39 @@
 
 <link href="/css/loginStylesheet.css" rel="stylesheet" />
 <html>    
-    <body>        
-        <div class="loginborder">            
-            <div class="login">                
-                <div class="header">                    
-                    <h3>Login</h3>                
-                </div>                
-                <div class="log">                    
-                    <label>Email</label>                    
-                    <input @bind="model.UserName" type="text" placeholder="Email"/>                
-                </div>                
-                <div class="log">                    
-                    <label>Passwort</label>                    
-                    <input @bind="model.Password" type="password" placeholder="Passwort"/>                
-                </div>                
-                <button @onclick="Authenticate" class="buttonLogin">Login</button>                
-                <div class="container2">                    
-                    <span>Don't have an Account? <a href="Register">Sign up</a></span>                    
-                    <span style="float: right;">Forgot <a href="ResetPwd">password</a>?</span>                
-                </div>                
-                <div class="container" style=@curCSS>                    
-                    <span>Your password is incorrect or this account doesn't exist.</span>                    
-                    <span style="white-space: nowrap;">Please try again or <a href="resetPwd" style="color: darkred">reset your password</a>.</span>                
-                </div>            
-            </div>        
-        </div>    
+    <body>
+        <AuthorizeView>
+            <Authorized>
+                <p>You are already logged in!</p>
+                <a @onclick="Logout" href="javascript:void(0)">Logout</a>
+            </Authorized>
+            <NotAuthorized>
+                <div class="loginborder">
+                    <div class="login">
+                        <div class="header">
+                            <h3>Login</h3>
+                        </div>
+                        <div class="log">
+                            <label>Email</label>
+                            <input @bind="model.UserName" type="text" placeholder="Email" />
+                        </div>
+                        <div class="log">
+                            <label>Passwort</label>
+                            <input @bind="model.Password" type="password" placeholder="Passwort" />
+                        </div>
+                        <button @onclick="Authenticate" class="buttonLogin">Login</button>
+                        <div class="container2">
+                            <span>Don't have an Account? <a href="Register">Sign up</a></span>
+                            <span style="float: right;">Forgot <a href="ResetPwd">password</a>?</span>
+                        </div>
+                        <div class="container" style=@curCSS>
+                            <span>Your password is incorrect or this account doesn't exist.</span>
+                            <span style="white-space: nowrap;">Please try again or <a href="resetPwd" style="color: darkred">reset your password</a>.</span>
+                        </div>
+                    </div>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
     </body>
 </html>
 
@@ -45,7 +53,6 @@
         public string UserName { get; set; }
         public string Password{ get; set; }
     }
-
     private Model model = new Model();
 
     string shownCSS = "margin-top: 15px; border-radius: 5px; background-color:#ffdce4; color: darkred;";
@@ -74,5 +81,11 @@
                 Role = benutzer.Role
             });
         navManager.NavigateTo("Dashboard", true);
+    }
+    private async Task Logout()
+    {
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationState(null);
+        navManager.NavigateTo("/", true);
     }
 }

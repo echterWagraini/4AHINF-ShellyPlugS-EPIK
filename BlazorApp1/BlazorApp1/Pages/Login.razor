@@ -12,29 +12,37 @@
 <html>
 <link href="/css/stylesheet.css" rel="stylesheet" />
 <body>
-    <h2>Login</h2>
-    <div class="container">
-        <label><b>Username oder Email</b></label>
-        <input type="text" @bind="model.userNameInput" placeholder="Enter Username" id="userName" name="userName" runat="server" required>
+    <AuthorizeView>
+        <Authorized>
+            <p>You are already logged in!</p>
+            <a @onclick="Logout" href="javascript:void(0)">Logout</a>
+        </Authorized>
+        <NotAuthorized>
+            <h2>Login</h2>
+            <div class="container">
+                <label><b>Username oder Email</b></label>
+                <input type="text" @bind="model.userNameInput" placeholder="Enter Username" id="userName" name="userName" runat="server" required>
 
-        <label><b>Passwort</b></label>
-        <input type="password" @bind="model.passwordInput" placeholder="Enter Password" name="psw" required>
-        
-        <div class="container" style=@curCSS>
-            <span>
-                Your password is incorrect or this account doesn't exist. Please try again or 
-                <a href="resetPwd" style="color: darkred">reset your password</a>
-            </span>
-        </div>
+                <label><b>Passwort</b></label>
+                <input type="password" @bind="model.passwordInput" placeholder="Enter Password" name="psw" required>
 
-        <button type="submit" @onclick="onLoginClick" runat="server" CausesValidation="False">Sign in</button>
+                <div class="container" style=@curCSS>
+                    <span>
+                        Your password is incorrect or this account doesn't exist. Please try again or
+                        <a href="resetPwd" style="color: darkred">reset your password</a>
+                    </span>
+                </div>
 
-        <input type="checkbox" checked="checked"> Remember me
-    </div>
-    <div class="container" style="background-color: #121212;color:white;border-radius: 10px;">
-        <span>Don't have an Account? <a href="Register">Sign up</a></span>
-        <span class="psw">Forgot <a href="ResetPwd">password?</a></span>
-    </div>
+                <button type="submit" @onclick="onLoginClick" runat="server" CausesValidation="False">Sign in</button>
+
+                <input type="checkbox" checked="checked"> Remember me
+            </div>
+            <div class="container" style="background-color: #121212;color:white;border-radius: 10px;">
+                <span>Don't have an Account? <a href="Register">Sign up</a></span>
+                <span class="psw">Forgot <a href="ResetPwd">password?</a></span>
+            </div>
+        </NotAuthorized>
+    </AuthorizeView>
 </body>
 </html>
 
@@ -75,5 +83,11 @@
             });
 
         navManager.NavigateTo("Dashboard", true);
+    }
+    private async Task Logout()
+    {
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationState(null);
+        navManager.NavigateTo("/", true);
     }
 }
