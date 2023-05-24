@@ -23,7 +23,7 @@
         </Authorized>
     </AuthorizeView>
 
-    @if (currentUser != null) //Lambda not allowed in AuthorizeView
+    @if (currentUser != null&&currentUser.Notifications!=null) //Lambda not allowed in AuthorizeView
     {
         @foreach (Notification n in currentUser.Notifications)
         {

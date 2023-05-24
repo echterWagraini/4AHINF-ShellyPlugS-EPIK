@@ -16,6 +16,8 @@ builder.Services.AddScoped<ProtectedSessionStorage>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 builder.Services.AddScoped<ClaimsPrincipal>();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddHostedService<NotificationHostedSercie>();
+builder.Services.AddSingleton<MQTTInfluxDataSercie>();
 
 var app = builder.Build();
 

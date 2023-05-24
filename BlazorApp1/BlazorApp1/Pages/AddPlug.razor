@@ -77,14 +77,17 @@
             string perm=client.GetStringAsync("http://"+ipInput+"/relay/0").Result;
             Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);*/
 
-            Plug plug1 = new Plug();
+            /*Plug plug1 = new Plug();
             plug1.ip = ipInput;
             plug1.name = name;
-
-            currentUser.Plugs.Add(plug1);
-            /*Notification n = new Notification();
+            currentUser.Plugs.Add(plug1);*/
+            Notification n = new Notification();
             n.message = name;
-            currentUser.Notifications.Add(n);*/
+            if (currentUser.Notifications == null)
+            {
+                currentUser.Notifications = new List<Notification>();
+            }
+            currentUser.Notifications.Add(n);
 
             UpdateUser();
 
@@ -101,8 +104,8 @@
         var collection = mongodb.GetCollection<Benutzer>("Benutzer");
 
         var filter = Builders<Benutzer>.Filter.Eq("Email", currentUser.Email);
-        var updater = Builders<Benutzer>.Update.Set("Plugs", currentUser.Plugs);
-        //var updater = Builders<Benutzer>.Update.Set("Notifications", currentUser.Notifications);
+        //var updater = Builders<Benutzer>.Update.Set("Plugs", currentUser.Plugs);
+        var updater = Builders<Benutzer>.Update.Set("Notifications", currentUser.Notifications);
 
         var benutzer = collection.Find(filter).FirstOrDefault();
 
