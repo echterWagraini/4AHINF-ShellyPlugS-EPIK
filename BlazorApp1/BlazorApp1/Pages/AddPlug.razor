@@ -1,7 +1,11 @@
 ﻿@page "/AddPlug"
 @using MongoDB.Bson;
 @using MongoDB.Driver;
+<<<<<<< Updated upstream
 @using System.Text.Json;
+=======
+@using Newtonsoft.Json;
+>>>>>>> Stashed changes
 @inject NavigationManager NavManager
 @inject IJSRuntime js
 
@@ -73,17 +77,36 @@
     {
         try
         {
+<<<<<<< Updated upstream
             /*HttpClient client = new HttpClient();
             string perm=client.GetStringAsync("http://"+ipInput+"/relay/0").Result;
             Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);*/
+=======
+            HttpClient client = new HttpClient();
+            string src = client.GetStringAsync("http://"+ipInput+"/settings").Result;
+            //Console.WriteLine(src);
+            dynamic data = Newtonsoft.Json.Linq.JObject.Parse(src);
+            //Console.WriteLine(data.device.mac);
+>>>>>>> Stashed changes
 
             Plug plug1 = new Plug();
             plug1.ip = ipInput;
             plug1.name = name;
+<<<<<<< Updated upstream
 
             currentUser.Plugs.Add(plug1);
             /*Notification n = new Notification();
             n.message = name;
+=======
+            plug1.id = data.device.mac;
+            currentUser.Plugs.Add(plug1);
+            Notification n = new Notification();
+            /*n.message = name;
+            if (currentUser.Notifications == null)
+            {
+                currentUser.Notifications = new List<Notification>();
+            }
+>>>>>>> Stashed changes
             currentUser.Notifications.Add(n);*/
 
             UpdateUser();

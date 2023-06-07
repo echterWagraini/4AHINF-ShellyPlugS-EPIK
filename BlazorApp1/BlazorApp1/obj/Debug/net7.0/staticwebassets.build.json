@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< Updated upstream
   "Hash": "GjgC0w8EhPF4Mc/3Ig12dNSBHwjK9I+cyxisfod5eSg=",
+=======
+  "Hash": "3jViOyV6S4TGoQVNnlWxFWWhbXB0JU3Y3+VHuA+Fwuk=",
+>>>>>>> Stashed changes
   "Source": "BlazorApp1",
   "BasePath": "_content/BlazorApp1",
   "Mode": "Default",
@@ -10,17 +14,28 @@
     {
       "Name": "BlazorApp1\\wwwroot",
       "Source": "BlazorApp1",
+<<<<<<< Updated upstream
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "BlazorApp1.styles.css",
       "AssetKind": "All",
@@ -31,6 +46,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
+<<<<<<< Updated upstream
       "OriginalItemSpec": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp1.styles.css"
     },
     {
@@ -38,6 +54,15 @@
       "SourceId": "BlazorApp1",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+=======
+      "OriginalItemSpec": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp1.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "BlazorApp1.bundle.scp.css",
       "AssetKind": "All",
@@ -48,6 +73,7 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
+<<<<<<< Updated upstream
       "OriginalItemSpec": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css"
     },
     {
@@ -55,6 +81,15 @@
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "OriginalItemSpec": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +103,17 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +127,17 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\dashboardStylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\dashboardStylesheet.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/dashboardStylesheet.css",
       "AssetKind": "All",
@@ -102,10 +151,17 @@
       "OriginalItemSpec": "wwwroot\\css\\dashboardStylesheet.css"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\loginStylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\loginStylesheet.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/loginStylesheet.css",
       "AssetKind": "All",
@@ -119,10 +175,17 @@
       "OriginalItemSpec": "wwwroot\\css\\loginStylesheet.css"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -136,10 +199,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -153,10 +223,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -170,10 +247,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -187,10 +271,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -204,10 +295,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -221,10 +319,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -238,10 +343,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -255,10 +367,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\README.md",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -272,10 +391,17 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\registerStylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\registerStylesheet.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/registerStylesheet.css",
       "AssetKind": "All",
@@ -289,10 +415,17 @@
       "OriginalItemSpec": "wwwroot\\css\\registerStylesheet.css"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\site.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\site.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -306,10 +439,17 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\stylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\stylesheet.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/stylesheet.css",
       "AssetKind": "All",
@@ -323,10 +463,17 @@
       "OriginalItemSpec": "wwwroot\\css\\stylesheet.css"
     },
     {
+<<<<<<< Updated upstream
       "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+>>>>>>> Stashed changes
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

@@ -27,6 +27,7 @@
             <h1>Not logged in!</h1>
         </NotAuthorized>
     </AuthorizeView>
+<<<<<<< Updated upstream
     <!-- in dem AuthorizeView kann man keine onclick funktion mit einer lambda methode ersetzen
     <AuthorizeView>
         <Authorized>
@@ -70,6 +71,9 @@
         </Authorized>
     </AuthorizeView>
     -->
+=======
+   
+>>>>>>> Stashed changes
     @if (currentUser != null)
     {
         <div class="grid-container" style="@curCSScards">
@@ -79,7 +83,10 @@
                 {
                     <div class='plug-card' @onclick="@(() => onCardClick(p))">
                         <h2>@p.name</h2>
+<<<<<<< Updated upstream
                         <p>Status: @p.ison.ToString()</p>
+=======
+>>>>>>> Stashed changes
                         <p>Power Consumption:</p>
                         <p>IP: @p.ip</p>
                         <button @onclick='onTurnOffClick' runat='server'>Turn Off</button>
@@ -108,7 +115,10 @@
                 }
             }
         </div>
+<<<<<<< Updated upstream
         <label>@test</label>
+=======
+>>>>>>> Stashed changes
     }
 </body>
 </html>
@@ -118,7 +128,10 @@
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }
     Benutzer currentUser = new Benutzer();
+<<<<<<< Updated upstream
     String test="";
+=======
+>>>>>>> Stashed changes
 
     bool showCards = true;
     string hidingCSS = "display:none";
@@ -158,6 +171,7 @@
         {
             js.InvokeVoidAsync("alert", "Somethign went Wrong!" + ex.GetType().ToString()+ex.ToString());
         }
+<<<<<<< Updated upstream
 
         /*//set timer
         var timer = new PeriodicTimer(TimeSpan.FromSeconds(5));
@@ -172,6 +186,8 @@
         }
         }
         }*/
+=======
+>>>>>>> Stashed changes
     }
 
 
@@ -179,11 +195,16 @@
 
     public void onTurnOffClick()
     {
+<<<<<<< Updated upstream
         HttpClient client = new HttpClient();
+=======
+        /*HttpClient client = new HttpClient();
+>>>>>>> Stashed changes
         string perm=client.GetStringAsync("http://10.10.2.134/relay/0").Result;
         Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);
 
 
+<<<<<<< Updated upstream
         if (plug1.ison)
         {
             client.PostAsync("http://10.10.2.134/relay/0?turn=off",null);
@@ -192,18 +213,37 @@
         {
             client.PostAsync("http://10.10.2.134/relay/0?turn=on",null);
         }
+=======
+            if (plug1.ison)
+            {
+            client.PostAsync("http://10.10.2.134/relay/0?turn=off",null);
+        }
+        else if(!plug1.ison)
+            {
+            client.PostAsync("http://10.10.2.134/relay/0?turn=on",null);
+    }*/
+>>>>>>> Stashed changes
     }
     public Plug updatePlugData(string ipInput)
     {
         try
         {
+<<<<<<< Updated upstream
             HttpClient client = new HttpClient();
+=======
+            /*HttpClient client = new HttpClient();
+>>>>>>> Stashed changes
             string perm = client.GetStringAsync("http://" + ipInput + "/relay/0").Result;
             Plug plug1 = JsonSerializer.Deserialize<Plug>(perm);
 
             plug1.ip = ipInput;
 
+<<<<<<< Updated upstream
             return plug1;
+=======
+            return plug1;*/
+            return null;
+>>>>>>> Stashed changes
 
         }
         catch (Exception ex)
@@ -236,6 +276,7 @@
         }
     }
 
+<<<<<<< Updated upstream
     public async void connectMQTT()
     {
         //Options
@@ -261,6 +302,9 @@
                         "{'2023': '👍'}"                    // Message to publish
                         ).ConfigureAwait(false);
     }
+=======
+
+>>>>>>> Stashed changes
     //Beispiel für die Verwendung der Nutzerdaten:
     /*[CascadingParameter]
     private Task<AuthenticationState> authenticationState{ get; set; }

@@ -16,6 +16,11 @@ builder.Services.AddScoped<ProtectedSessionStorage>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 builder.Services.AddScoped<ClaimsPrincipal>();
 builder.Services.AddSingleton<WeatherForecastService>();
+<<<<<<< Updated upstream
+=======
+builder.Services.AddHostedService<NotificationHostedService>();
+builder.Services.AddHostedService<MQTTInfluxDataService>();
+>>>>>>> Stashed changes
 
 var app = builder.Build();
 

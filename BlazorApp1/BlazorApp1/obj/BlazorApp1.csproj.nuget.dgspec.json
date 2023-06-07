@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+        "projectName": "BlazorApp1",
+        "projectPath": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+        "packagesPath": "C:\\Users\\vitus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vitus\\Downloads\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vitus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Stashed changes
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +39,10 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+<<<<<<< Updated upstream
+=======
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+>>>>>>> Stashed changes
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,9 +65,23 @@
               "target": "Package",
               "version": "[0.1.10, )"
             },
+<<<<<<< Updated upstream
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.19.0, )"
+=======
+            "InfluxDB.Client": {
+              "target": "Package",
+              "version": "[4.12.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+>>>>>>> Stashed changes
             }
           },
           "imports": [
@@ -68,7 +103,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< Updated upstream
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+>>>>>>> Stashed changes
         }
       }
     }
