@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {}
+    "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {}
   },
   "projects": {
-    "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {
+    "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+        "projectUniqueName": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
         "projectName": "BlazorApp1",
-        "projectPath": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\",
+        "projectPath": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+        "packagesPath": "C:\\Users\\iamir\\.nuget\\packages\\",
+        "outputPath": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iamir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,10 +43,6 @@
             "HiveMQtt": {
               "target": "Package",
               "version": "[0.1.10, )"
-            },
-            "InfluxDB.Client": {
-              "target": "Package",
-              "version": "[4.12.0, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
@@ -73,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GjgC0w8EhPF4Mc/3Ig12dNSBHwjK9I+cyxisfod5eSg=",
+  "Hash": "9LSI/cN9C5wTAVWljr9xGC1Hn4ylKA7ojgOx28uYMgw=",
   "Source": "BlazorApp1",
   "BasePath": "_content/BlazorApp1",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "BlazorApp1\\wwwroot",
       "Source": "BlazorApp1",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "BlazorApp1.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp1.styles.css"
+      "OriginalItemSpec": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorApp1.styles.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "BlazorApp1.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,30 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\addPlugStylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "BasePath": "_content/BlazorApp1",
+      "RelativePath": "css/addPlugStylesheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\addPlugStylesheet.css"
+    },
+    {
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\dashboardStylesheet.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\dashboardStylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/dashboardStylesheet.css",
       "AssetKind": "All",
@@ -102,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\dashboardStylesheet.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\loginStylesheet.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\loginStylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/loginStylesheet.css",
       "AssetKind": "All",
@@ -119,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\loginStylesheet.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -136,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -153,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -170,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -187,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -204,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -221,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -238,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -255,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -272,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\registerStylesheet.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\registerStylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/registerStylesheet.css",
       "AssetKind": "All",
@@ -289,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\css\\registerStylesheet.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\site.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -306,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\stylesheet.css",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\stylesheet.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "css/stylesheet.css",
       "AssetKind": "All",
@@ -323,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\css\\stylesheet.css"
     },
     {
-      "Identity": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
+      "Identity": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

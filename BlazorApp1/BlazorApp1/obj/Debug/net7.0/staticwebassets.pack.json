@@ -1,75 +1,79 @@
 {
   "Files": [
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
       "PackagePath": "staticwebassets\\BlazorApp1.bundle.scp.css"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\addPlugStylesheet.css",
+      "PackagePath": "staticwebassets\\css\\addPlugStylesheet.css"
+    },
+    {
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\dashboardStylesheet.css",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\dashboardStylesheet.css",
       "PackagePath": "staticwebassets\\css\\dashboardStylesheet.css"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\loginStylesheet.css",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\loginStylesheet.css",
       "PackagePath": "staticwebassets\\css\\loginStylesheet.css"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\README.md",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\README.md",
       "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\registerStylesheet.css",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\registerStylesheet.css",
       "PackagePath": "staticwebassets\\css\\registerStylesheet.css"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\site.css",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\stylesheet.css",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\css\\stylesheet.css",
       "PackagePath": "staticwebassets\\css\\stylesheet.css"
     },
     {
-      "Id": "C:\\Windows\\System32\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
+      "Id": "C:\\Neuer Ordner\\4AHINF-ShellyPlugS-EPIK-main\\4AHINF-ShellyPlugS-EPIK-main\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {

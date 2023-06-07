@@ -17,7 +17,7 @@ body {
     align-items: center;
     height: 100vh;
     */
-    background-color: #212121;
+    background-color: #5A5A5A;
     color: white;
 }
 /* Dashboard container */ .dashboard {
@@ -31,8 +31,9 @@ body {
     padding: 20px;
     width: 100%;
 }
-/* Individual plug cards */ .plug-card {
-    background-color: #121212;
+/* Individual plug cards */
+.plug-card {
+    background-color: #464646;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -54,7 +55,7 @@ body {
     }
 
     .plug-card button {
-        background-color: #4CAF50;
+        background-color: #383838;
         border: none;
         border-radius: 4px;
         color: white;

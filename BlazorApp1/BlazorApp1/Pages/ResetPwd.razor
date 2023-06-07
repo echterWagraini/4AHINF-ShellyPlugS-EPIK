@@ -1,33 +1,107 @@
 ﻿@page "/ResetPwd" 
 @using MongoDB.Driver; 
+@using System.Net.Mail;
+@using System.Net;
 @inject NavigationManager NavManager 
 <PageTitle>Reset Password</PageTitle>
 <link href="/css/registerStylesheet.css" rel="stylesheet" />
 <html> 
-    <body> 
+    <body>
+
+    @if (!reset)
+    {
+
+        <div class="registerborder">
+            <div class="register">
+
+                <div class="header">
+                    <h3>Forgot Password</h3>
+                </div>
+
+                <div class="reg">
+                    <label>Email</label>
+                    <input @bind="model.UserName" type="text" placeholder="Email" />
+                </div>
+
+                <button type="submit" @onclick="boolReset" class="buttonRegister" runat="server" CausesValidation="False">Reset password</button>
+
+                <div class="container2">
+                    <span class="login">Back to login <a href="Login">Sign in</a></span>
+                </div>
+
+            </div>
+        </div>
+
+    }
+    else
+    {
+
+        <div class="registerborder">
+            <div class="register">
+
+                <div class="header">
+                    <h3>Forgot Password</h3>
+                </div>
+
+                <div class="reg">
+                    <label>New password</label> <input @bind="model.Password" type="password" placeholder="Password" />
+                </div>
+
+                <div class="reg">
+                    <label>Confirm password</label>
+                    <input @bind="model.Password2" type="password" placeholder="Password" />
+                </div>
+
+                <button type="submit" @onclick="onRegisterClick" class="buttonRegister" runat="server" CausesValidation="False">Reset password</button>
+
+                <div class="container2">
+                    <span class="login">Back to login <a href="Login">Sign in</a></span>
+                </div>
+
+                <div class="container" style=@curCSS>
+                    <span>Passwords don`t match</span>
+                </div>
+
+            </div>
+        </div>
+
+    }
+    <!--
         <div class="registerborder"> 
             <div class="register"> 
                 <div class="header"> 
-                    <h3>Password recovery</h3> 
-                    </div> <div class="reg"> 
+                    <h3>Forgot Password</h3> 
+                    </div> 
+
+                    
+
+                    <div class="reg"> 
                         <label>Email</label> 
-                        <input @bind="model.UserName" type="text" placeholder="Email"/> </div> 
+                        <input @bind="model.UserName" type="text" placeholder="Email"/> 
+                    </div> 
+
                         <div class="reg"> 
                             <label>New password</label> <input @bind="model.Password" type="password" placeholder="Password" /> 
                         </div> 
+
                         <div class="reg"> 
                             <label>Confirm password</label> 
                             <input @bind="model.Password2" type="password" placeholder="Password" /> 
                         </div> 
+
                         <button type="submit" @onclick="onRegisterClick" class="buttonRegister" runat="server" CausesValidation="False">Reset password</button> 
+                        
                         <div class="container2"> 
                             <span class="login">Back to login <a href="Login">Sign in</a></span> 
                         </div> 
+
                         <div class="container" style=@curCSS> 
                             <span>Passwords don`t match</span> 
                         </div> 
+
                     </div>
                 </div>
+                -->
             </body>
     </html>
  @code 
@@ -38,49 +112,40 @@
         public string Password { get; set; } 
         public string Password2 { get; set; } 
     }
-        private Model model = new Model(); 
-        string shownCSS = "margin-top: 15px; border-radius: 5px; background-color:#ffdce4; color: darkred;"; 
-        string curCSS = "margin-top: 15px; border-radius: 5px; background-color:#ffdce4; color: darkred; display:none";
+    private Model model = new Model(); 
+    string shownCSS = "margin-top: 15px; border-radius: 5px; background-color:#ffdce4; color: darkred;"; 
+    string curCSS = "margin-top: 15px; border-radius: 5px; background-color:#ffdce4; color: darkred; display:none";
 
-        public void onRegisterClick() 
-        { 
-            if(model.Password == model.Password2 && model.Password != null && model.Password2 != null) 
-            { 
-                var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
-                var mongodb = client.GetDatabase("BenutzerDatabase"); 
-                var collection = mongodb.GetCollection<Benutzer>("Benutzer"); 
+    bool reset = true;
 
-                var filter = Builders<Benutzer>.Filter.Eq("Email", model.UserName); 
-                var updater = Builders<Benutzer>.Update.Set("Passwort", model.Password); 
 
-                //var benutzer = collection.Find(filter).FirstOrDefault(); 
-                collection.FindOneAndUpdate(filter, updater); 
-                
-                /*if (passwordInput == passwordInput2) 
-                {
-                    collection.FindOneAndUpdate(filter, updater); 
-                }*/
-                NavManager.NavigateTo("Login"); 
-            } 
-            else
-            { 
-                curCSS = shownCSS; 
-            } 
-        } 
-        /*
-        private string userNameInput = ""; 
-        private string passwordInput = ""; 
-        private string passwordInput2 = ""; 
-        private void OnUserNameEvent(ChangeEventArgs changeEvent) 
+
+    public void onRegisterClick() 
+    { 
+        if(model.Password == model.Password2 && model.Password != null && model.Password2 != null) 
         { 
-            userNameInput = (string)changeEvent.Value; 
+            var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
+            var mongodb = client.GetDatabase("BenutzerDatabase");
+            var collection = mongodb.GetCollection<Benutzer>("Benutzer");
+
+            var filter = Builders<Benutzer>.Filter.Eq("Email", model.UserName);
+
+            if (collection.Find(filter) != null)
+            {
+                var updater = Builders<Benutzer>.Update.Set("Passwort", model.Password);
+                collection.FindOneAndUpdate(filter, updater);
+                NavManager.NavigateTo("Login");
+            }
         } 
-        private void OnPasswordEvent(ChangeEventArgs changeEvent) 
+        else
         { 
-            passwordInput = (string)changeEvent.Value; 
+            curCSS = shownCSS; 
         } 
-        private void OnPassword2Event(ChangeEventArgs changeEvent) 
-        { 
-            passwordInput2 = (string)changeEvent.Value; 
-        }*/ 
+    }
+
+    public void boolReset()
+    {
+        reset = true;
+    }
+
 }

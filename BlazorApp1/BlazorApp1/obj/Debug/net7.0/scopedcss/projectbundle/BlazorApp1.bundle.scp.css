@@ -11,7 +11,7 @@ main[b-45rkf8v3vv] {
 
 .sidebar[b-45rkf8v3vv] {
     /*background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);*/
-    background-color: #121212;
+    background-color: #464646;
 }
 
 .top-row[b-45rkf8v3vv] {
@@ -20,7 +20,7 @@ main[b-45rkf8v3vv] {
     height: 3.5rem;
     display: flex;
     align-items: center;
-    background-color: #121212;
+    background-color: #464646;
 }
 
     .top-row[b-45rkf8v3vv]  a, .top-row .btn-link[b-45rkf8v3vv] {

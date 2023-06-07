@@ -1,19 +1,14 @@
 ﻿@page "/"
-@using MongoDB.Driver;
-@inject IJSRuntime js
 
 <PageTitle>Index</PageTitle>
 
 <html>
 <link href="/css/stylesheet.css" rel="stylesheet" />
 <body>
+    <h2>Start Page?</h2>
     <AuthorizeView>
         <Authorized>
-            <h2>Hello, @currentUser.Email!</h2>
-            @if (currentUser.Notifications.Count > 0)
-            {
-                <p>You have @currentUser.Notifications.Count messages! <a href="Notifications">Look at them</a> </p>
-            }
+            <h1>Logged in as, @context.User.Identity.Name!</h1>
         </Authorized>
         <NotAuthorized>
             <span class="gotologin">Already have an Account? <a href="Login">Sign in</a></span>
@@ -25,38 +20,4 @@
 
 @code
 {
-    [CascadingParameter]
-    private Task<AuthenticationState> authenticationState { get; set; }
-    Benutzer currentUser = new Benutzer();
-    //get the logged in User
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            var authState = await authenticationState;
-            var name = authState.User.Identity.Name;
-
-            var client = new MongoClient("mongodb+srv://Flo:shelly123@shelly.ikeunhp.mongodb.net/?retryWrites=true&w=majority");
-            var mongodb = client.GetDatabase("BenutzerDatabase");
-            var collection = mongodb.GetCollection<Benutzer>("Benutzer");
-
-            var filter = Builders<Benutzer>.Filter.Eq("Email", name);
-
-            var benutzer = collection.Find(filter).FirstOrDefault();
-            if (benutzer != null)
-            {
-                currentUser = benutzer;
-
-                if (currentUser.Plugs == null)
-                {
-                    List<Plug> plugList = new List<Plug>();
-                    currentUser.Plugs = plugList;
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            js.InvokeVoidAsync("alert", "Somethign went Wrong!" + ex.GetType().ToString() + ex.ToString());
-        }
-    }
 }

@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #212121;
+    background-color: #5A5A5A;
     color: white;
 }
 
@@ -17,7 +17,7 @@ input[type=password] {
     border: 1px solid #ccc;
     border-color: #616161;
     box-sizing: border-box;
-    background-color: #121212;
+    background-color: #383838;
     color: white;
     border-radius: 4px;
 }
@@ -73,7 +73,7 @@ span.psw {
 .register {
     padding: 20px;
     border-radius: 25px;
-    background-color: #121212;
+    background-color: #464646;
     grid-column-start: 2;
     grid-column-end: 3;
     font-size: 15px;
@@ -91,14 +91,14 @@ span.psw {
 .buttonRegister {
     margin-top: 20px;
     margin-bottom: 15px;
-    background-color: #212121;
+    background-color: #383838;
     border-radius: 5px;
     font-size: 17px;
 }
 
 .container2 {
     padding: 7px;
-    background-color: #1A1A1A;
+    background-color: #383838;
     color: white;
     border-radius: 5px;
 }

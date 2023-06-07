@@ -1,4 +1,4 @@
-body {
+﻿body {
     background-color: #5A5A5A;
     color: white;
 }
@@ -64,13 +64,13 @@ span.psw {
 
 
 
-.loginborder {
+.addplugborder {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 25% 50% 25%;
     justify-content: center;
 }
 
-.login {
+.addplug {
     padding: 20px;
     border-radius: 25px;
     background-color: #464646;
@@ -83,24 +83,17 @@ span.psw {
     text-align: center;
 }
 
-.log{
+.add {
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.buttonLogin {
+.buttonAddPlug {
     margin-top: 20px;
     margin-bottom: 15px;
     background-color: #383838;
     border-radius: 5px;
     font-size: 17px;
-}
-
-.container2 {
-    padding: 7px;
-    background-color: #383838;
-    color: white;
-    border-radius: 5px;
 }
 
 
